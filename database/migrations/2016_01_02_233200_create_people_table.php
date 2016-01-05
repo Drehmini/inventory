@@ -20,12 +20,12 @@ class CreatePeopleTable extends Migration
             $table->string('address');
             $table->string('address_2')->nullable();
             $table->string('city');
-            $table->string('state');
+            $table->integer('state')->unsigned();
             $table->string('zip_code');
             $table->string('phone_number');
             $table->timestamps();
             $table->foreign('state')
-                ->references('code')->on('us_states');
+                ->references('id')->on('us_states');
         });
     }
 
