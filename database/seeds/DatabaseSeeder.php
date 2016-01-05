@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(EquipmentSeeder::class);
         $this->call(USStatesSeeder::class);
-        $this->call(PeopleSeeder::class);
+        $this->call(PersonSeeder::class);
 
         Model::reguard();
     }
