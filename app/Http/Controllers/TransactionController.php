@@ -41,11 +41,13 @@ class TransactionController extends Controller
     public function store(TransactionRequest $request)
     {
         $lastTransaction = Transaction::findLatest($request->equipment_id);
-        $request->merge(['user' => 'Test', 'in_or_out' => 'OUT',
-            'transaction_id' => $this->generateTransactionId('OUT')]);
         if($lastTransaction->get()->isEmpty() ||  $lastTransaction->in_or_out == 'IN') {
             $transaction = new Transaction;
-            $transaction->create($request->all());
+            $transaction->fill($request->all());
+            $transaction->user = 'Test';
+            $transaction->in_or_out = 'OUT';
+            $transaction->transaction_id = $this->generateTransactionId('OUT');
+            $transaction->save();
         }
         return redirect()->route('inventory.index');
     }
