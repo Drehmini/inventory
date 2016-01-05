@@ -26,6 +26,7 @@ class AddPersonToTransactionsTable extends Migration
     public function down()
     {
         Schema::table('transactions', function (Blueprint $table) {
+            $table->dropForeign('transactions_person_id_foreign');
             $table->dropColumn('person_id');
         });
     }

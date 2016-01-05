@@ -18,7 +18,6 @@ class CreateEquipmentTable extends Migration
             $table->enum('type', ['Laptop', 'Projector', 'Tablet', 'Projector Screen']);
             $table->string('make');
             $table->string('model');
-            $table->boolean('is_available');
             $table->timestamp('purchase_date');
             $table->timestamps();
         });

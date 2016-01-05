@@ -10,6 +10,7 @@ class Equipment extends Model
         'serial',
         'make',
         'model',
+        'type',
         'purchase_date',
     ];
 

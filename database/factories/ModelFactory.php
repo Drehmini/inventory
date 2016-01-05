@@ -25,7 +25,6 @@ $factory->define(App\Equipment::class, function (Faker\Generator $faker) {
        'serial'         => $faker->unique()->bothify('???#######'),
        'make'           => $faker->company,
        'model'          => $faker->bothify('??####'),
-       'is_available'   => true,
        'purchase_date'  => $faker->date(),
    ] ;
 });
