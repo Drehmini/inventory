@@ -17,7 +17,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $people = Person::all();
+        $people = Person::join('us_states', 'state', '=', 'us_states.id')->get();
         return view('person.index', compact('people'));
     }
 
@@ -38,7 +38,6 @@ class PersonController extends Controller
     public function create()
     {
         $states = DB::table('us_states')->lists('code');
-
         return view('person.create', compact('states'));
     }
 

@@ -27,7 +27,7 @@
                                 <td>{{ $person->email }}</td>
                                 <td>{{ $person->address }}{{ is_null($person->address_2) ? '' :  ' ' . $person->address_2 }}</td>
                                 <td>{{ $person->city }}</td>
-                                <td>{{ $person->state }}</td>
+                                <td>{{ $person->code }}</td>
                                 <td>{{ phone_format($person->phone_number, 'US') }}</td>
                             </tr>
                         @endforeach
