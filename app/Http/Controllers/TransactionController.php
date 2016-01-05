@@ -34,6 +34,10 @@ class TransactionController extends Controller
         return view('inventory.index', compact('equipment_id'));
     }
 
+    /**
+     * @param TransactionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(TransactionRequest $request)
     {
         $lastTransaction = Transaction::findLatest($request->equipment_id);
@@ -41,7 +45,7 @@ class TransactionController extends Controller
             'transaction_id' => $this->generateTransactionId('OUT')]);
         if($lastTransaction->get()->isEmpty() ||  $lastTransaction->in_or_out == 'IN') {
             $transaction = new Transaction;
-            $transaction->save($request->all());
+            $transaction->create($request->all());
         }
         return redirect()->route('inventory.index');
     }

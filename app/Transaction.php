@@ -6,10 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    protected $fillabe = [
+    protected $guarded = [
+        'id',
         'in_or_out',
-        'due_date',
-        'equipment_id',
+        'user',
+        'created_at',
+        'updated_at',
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -22,7 +29,7 @@ class Transaction extends Model
 
     public function person()
     {
-        return $this->belongsTo('App\Person');
+        return $this->belongsTo('App\Person', 'person_id');
     }
 
     /**
@@ -31,7 +38,7 @@ class Transaction extends Model
      */
     public function scopeFindLatest($query, $id)
     {
-        return $query->where('equipment_id', $id)->orderBy('created_at', 'desc')->firstOrFail();
+        return $query->where('equipment_id', $id)->orderBy('created_at', 'desc')->first();
     }
 
     /**
