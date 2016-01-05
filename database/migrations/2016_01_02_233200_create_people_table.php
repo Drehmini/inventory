@@ -25,7 +25,7 @@ class CreatePeopleTable extends Migration
             $table->string('phone_number');
             $table->timestamps();
             $table->foreign('state')
-                ->references('id')->on('us_states');
+                ->references('state_id')->on('us_states');
         });
     }
 

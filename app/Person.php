@@ -6,21 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    protected $fillabe = [
-        'first_name',
-        'last_name',
-        'email',
-        'address',
-        'address_2',
-        'city',
-        'state',
-        'zip_code',
-        'phone_number',
-    ];
-
-    protected $dates = [
+    protected $guarded = [
+        'id',
         'created_at',
-        'updated_at',
+        'updated_ap'
     ];
 
     /**

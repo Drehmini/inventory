@@ -17,7 +17,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $people = Person::join('us_states', 'state', '=', 'us_states.id')->get();
+        $people = Person::join('us_states', 'state', '=', 'state_id')->get();
         return view('person.index', compact('people'));
     }
 
@@ -71,6 +71,6 @@ class PersonController extends Controller
     {
         $person = Person::findorfail($id);
         $person->update($request->all());
-        return redirect()->route('person.edit');
+        return redirect()->route('person.edit', $id);
     }
 }

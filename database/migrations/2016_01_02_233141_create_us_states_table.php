@@ -13,7 +13,7 @@ class CreateUsStatesTable extends Migration
     public function up()
     {
         Schema::create('us_states', function(Blueprint $table) {
-            $table->increments('id');
+            $table->increments('state_id');
             $table->string('name')->unique();
             $table->string('code')->unique();
     });
