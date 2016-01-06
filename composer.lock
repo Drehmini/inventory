@@ -4,9 +4,102 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "46ae19d1038671d220c5df46e6792b38",
-    "content-hash": "565c67229b0b3837bd2da18d53f895b9",
+    "hash": "b353c8a304322e923f92a5b993a90a30",
+    "content-hash": "1190284b193f2bad673d44dd78307b1e",
     "packages": [
+        {
+            "name": "adldap2/adldap2",
+            "version": "v5.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Adldap2/Adldap2.git",
+                "reference": "baf1ca9981efb746f59a8f7aea7b93160d3401d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Adldap2/Adldap2/zipball/baf1ca9981efb746f59a8f7aea7b93160d3401d3",
+                "reference": "baf1ca9981efb746f59a8f7aea7b93160d3401d3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "1.3.*",
+                "ext-ldap": "*",
+                "php": ">=5.4.26"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Adldap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Bauman",
+                    "email": "steven_bauman@outlook.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP LDAP Library for Active Directory Manipulation.",
+            "keywords": [
+                "active directory",
+                "ad",
+                "adLDAP",
+                "adldap2",
+                "directory",
+                "ldap",
+                "windows"
+            ],
+            "time": "2015-12-09 14:21:28"
+        },
+        {
+            "name": "adldap2/adldap2-laravel",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Adldap2/Adldap2-Laravel.git",
+                "reference": "478a16c8ba877121131b102abe904ee2bc79905d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Adldap2/Adldap2-Laravel/zipball/478a16c8ba877121131b102abe904ee2bc79905d",
+                "reference": "478a16c8ba877121131b102abe904ee2bc79905d",
+                "shasum": ""
+            },
+            "require": {
+                "adldap2/adldap2": "5.2.*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "~3.2"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Adldap\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Adldap2 for Laravel 5.",
+            "keywords": [
+                "adLDAP",
+                "adldap2",
+                "laravel",
+                "ldap"
+            ],
+            "time": "2015-12-22 17:38:37"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -93,6 +186,72 @@
             ],
             "description": "implementation of xdg base directory specification for php",
             "time": "2014-10-24 07:27:01"
+        },
+        {
+            "name": "doctrine/collections",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Collections\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Collections Abstraction library",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "array",
+                "collections",
+                "iterator"
+            ],
+            "time": "2015-04-14 22:21:58"
         },
         {
             "name": "doctrine/inflector",
@@ -904,16 +1063,16 @@
         },
         {
             "name": "propaganistas/laravel-phone",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Propaganistas/Laravel-Phone.git",
-                "reference": "c9d75872e1ea62de99d0a43be20fe153ca9f9422"
+                "reference": "19412270d9a3a60407bcd5cc87bfc06f083d6615"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/c9d75872e1ea62de99d0a43be20fe153ca9f9422",
-                "reference": "c9d75872e1ea62de99d0a43be20fe153ca9f9422",
+                "url": "https://api.github.com/repos/Propaganistas/Laravel-Phone/zipball/19412270d9a3a60407bcd5cc87bfc06f083d6615",
+                "reference": "19412270d9a3a60407bcd5cc87bfc06f083d6615",
                 "shasum": ""
             },
             "require": {
@@ -954,7 +1113,7 @@
                 "phone",
                 "validation"
             ],
-            "time": "2015-12-19 11:34:59"
+            "time": "2016-01-01 12:20:53"
         },
         {
             "name": "psr/log",

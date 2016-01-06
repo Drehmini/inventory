@@ -26,7 +26,7 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'auth']], function () {
     /*Route::get('inventory/transactions',
         ['as' => 'transactions.index', 'uses' => 'TransactionController@index']);
     Route::Get('inventory/transactions/create',
@@ -40,4 +40,10 @@ Route::group(['middleware' => ['web']], function () {
         ['as' => 'inventory.transactions.checkin', 'uses' => 'TransactionController@checkin']);
     Route::resource('inventory', 'EquipmentController');
     Route::resource('person', 'PersonController');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });

@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
+        Adldap\Laravel\AdldapServiceProvider::class,
+        Adldap\Laravel\AdldapAuthServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -205,6 +207,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'Form'      => Collective\Html\FormFacade::class,
+        'Adldap'    => Adldap\Laravel\Facades\Adldap::class,
 
     ],
 
