@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-2 col-md-offset-5">
+        <div class="col-sm-3 col-md-3 center-block">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Serial: {{ $item->serial }}</h3>
                 </div>
-                <div class="panel-body">
+                <div class="col-sm-offset-2 panel-body">
                     <dl class="dl-horizontal">
                         <dt>Make:</dt>
                         <dd>{{ $item->make }}</dd>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class=" col-sm-6 col-md-4 center-block">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Transaction History</h3>
@@ -43,7 +43,10 @@
                                 <td>{{ $transaction->transaction_id }}</td>
                                 <td>{{ $transaction->in_or_out == 'IN' ? 'IN' : 'OUT' }}</td>
                                 <td>{{ $transaction->created_at->toDateString() }}</td>
-                                <td>{{ $transaction->person->first_name . ' ' . $transaction->person->last_name }}</td>
+                                <td><a href=" {{ URL::route('person.show',
+                                                array($transaction->person->id)) }}">
+                                    {{ $transaction->person->first_name . ' ' . $transaction->person->last_name }}
+                                    </a></td>
                             </tr>
                         @endforeach
                         @endif

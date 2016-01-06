@@ -21,7 +21,9 @@
                             <tr>
                                 <td>{{ $transaction->transaction_id }}</td>
                                 <td>{{ $transaction->in_or_out == 'IN' ? 'IN' : 'OUT' }}</td>
-                                <td>{{ $transaction->equipment->serial }}</td>
+                                <td><a href="{{ URL::route('inventory.show',
+                                                array($transaction->equipment_id)) }}">
+                                    {{ $transaction->equipment->serial }}</a></td>
                                 <td>{{ $transaction->created_at->toDateString() }}</td>
                             </tr>
                         @endforeach

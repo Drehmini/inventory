@@ -48,6 +48,10 @@ class PersonController extends Controller
     public function store(PersonRequest $request)
     {
         Person::create($request->all());
+        if($request->session()->has('view_from')) {
+            $returnTo = $request->session()->get('view_from');
+            return redirect()->route('inventory.transactions.checkout', ['id' => $returnTo]);
+        }
         return redirect()->route('person.index');
     }
 

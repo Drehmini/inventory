@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-2 col-md-offset-5">
+        <div class="col-sm-4 col-md-3 center-block">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ $person->first_name . ' ' . $person->last_name }}</h3>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 center-block">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Transaction History</h3>

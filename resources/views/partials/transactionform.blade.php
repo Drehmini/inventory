@@ -12,6 +12,8 @@
                         <!-- Person Form Dropdown -->
                         {!! Form::label('person_id', 'Person: ', ['class' => 'control-label col-sm-3']) !!}
                         {!! Form::select('person_id', $people, null, ['class' => 'form-control span-sm-3']) !!}
+                        <a href="{{ URL::route('person.create') }}" style="padding-left: 2%;">
+                            <span class="glyphicon glyphicon-plus"></span></a>
                     </div>
                 </div>
                 <div class="form-group form-inline">
