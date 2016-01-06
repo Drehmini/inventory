@@ -1,10 +1,9 @@
 @extends('app')
 
 @section('content')
-    <h1>Edit: {{ $item->serial_number }}</h1>
-    <hr/>
-    {!! Form::model($item, ['method' => 'PATCH', 'action' => ['EquipmentController@update', $item->id]]) !!}
-    @include('partials.form', ['submitButtonText' => 'Update Item'])
+    {!! Form::model($item, ['method' => 'PATCH', 'route' => ['inventory.update', $item->id],
+                    'class' => 'form-horizontal']) !!}
+    @include('partials.inventoryform', ['submitButtonText' => 'Update', 'panelTitle' => 'Update ' . $item->serial])
     {!! Form::close() !!}
     @include('errors.list')
 @stop
