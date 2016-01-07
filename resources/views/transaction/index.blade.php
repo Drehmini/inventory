@@ -12,6 +12,7 @@
                         <tr>
                             <td class="col-md-3">Transaction</td>
                             <td>In/Out</td>
+                            <td>Person</td>
                             <td>Serial #</td>
                             <td>Type</td>
                             <td>Date</td>
@@ -22,6 +23,10 @@
                             <tr>
                                 <td>{{ $transaction->transaction_id }}</td>
                                 <td>{{ $transaction->in_or_out == 'IN' ? 'IN' : 'OUT' }}</td>
+                                <td><a href=" {{ URL::route('person.show',
+                                                array($transaction->person->id)) }}">
+                                        {{ $transaction->person->first_name . ' ' . $transaction->person->last_name }}
+                                    </a></td>
                                 <td><a href="{{ URL::route('inventory.show',
                                                 array($transaction->equipment_id)) }}">
                                     {{ $transaction->equipment->serial }}</a></td>

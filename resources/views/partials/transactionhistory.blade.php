@@ -11,7 +11,7 @@
                         <td>Transaction</td>
                         <td>In/Out</td>
                         <td>Date</td>
-                        <td>Person</td>
+                        <td>{{ ($showPerson) ? 'Person' : 'Item' }}</td>
                     </tr>
                     </thead>
                     <tbody>
