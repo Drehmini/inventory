@@ -13,6 +13,7 @@
                             <td>Serial #</td>
                             <td>Make</td>
                             <td>Model</td>
+                            <td>Type</td>
                             <td class="text-center">Check In/Out</td>
                         </tr>
                         </thead>
@@ -22,6 +23,7 @@
                             <td>{{ Html::linkRoute('inventory.show', $item->serial, $item->id) }}</td>
                             <td>{{ $item->make }}</td>
                             <td>{{ $item->model }}</td>
+                            <td>{{ $item->type }}</td>
                             @if($item->transactions->isEmpty())
                                 <td class="text-center">@include('partials.button',
                                 ['item' => $item, 'inOrOut' => 'IN'])</td>

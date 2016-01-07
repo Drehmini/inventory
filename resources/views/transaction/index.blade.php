@@ -13,6 +13,7 @@
                             <td class="col-md-3">Transaction</td>
                             <td>In/Out</td>
                             <td>Serial #</td>
+                            <td>Type</td>
                             <td>Date</td>
                         </tr>
                         </thead>
@@ -24,6 +25,7 @@
                                 <td><a href="{{ URL::route('inventory.show',
                                                 array($transaction->equipment_id)) }}">
                                     {{ $transaction->equipment->serial }}</a></td>
+                                <td>{{ $transaction->equipment->type }}</td>
                                 <td>{{ $transaction->created_at->toDateString() }}</td>
                             </tr>
                         @endforeach
