@@ -71,4 +71,23 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Handle a login request to the application before passing it to AD.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postLoginAD(Request $request)
+    {
+        if(!User::whereUsername($request->username)->count())
+        {
+            return redirect()->back()
+                ->withInput($request->only('username', 'remember'))
+                ->withErrors([
+                    'username' => 'This account is not allowed to access the system!',
+                ]);
+        }
+        return $this->postLogin($request);
+    }
 }

@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('inventory');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,10 +23,9 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web', 'auth']], function () {
-    /*Route::get('inventory/transactions',
-        ['as' => 'transactions.index', 'uses' => 'TransactionController@index']);
-    Route::Get('inventory/transactions/create',
-        ['as' => 'transactions.create', 'uses' => 'TransactionController@create']);*/
+    Route::get('/', function () {
+        return redirect()->route('inventory.index');
+    });
     Route::resource('inventory/transactions', 'TransactionController');
     Route::get('inventory/transactions/checkout/{id}',
         ['as' => 'inventory.transactions.checkout', 'uses' => 'TransactionController@checkout']);
@@ -43,7 +38,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 });
 
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-
-    Route::get('/home', 'HomeController@index');
+    Route::get('login', 'Auth\AuthController@getLogin');
+    Route::post('login', 'Auth\AuthController@postLoginAD');
+    Route::get('logout', 'Auth\AuthController@getLogout');
 });
