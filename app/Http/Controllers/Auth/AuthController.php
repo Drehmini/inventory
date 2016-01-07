@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -35,11 +36,10 @@ class AuthController extends Controller
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'getLogout']);
     }
 
     /**
@@ -75,7 +75,7 @@ class AuthController extends Controller
     /**
      * Handle a login request to the application before passing it to AD.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function postLoginAD(Request $request)
@@ -85,9 +85,9 @@ class AuthController extends Controller
             return redirect()->back()
                 ->withInput($request->only('username', 'remember'))
                 ->withErrors([
-                    'username' => 'This account is not allowed to access the system!',
+                    'username' => 'This account is not authorized.',
                 ]);
         }
-        return $this->postLogin($request);
+        return $this->login($request);
     }
 }

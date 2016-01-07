@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 
 use App\Transaction;
 use App\Http\Requests\TransactionRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
@@ -44,7 +45,7 @@ class TransactionController extends Controller
         if($lastTransaction->get()->isEmpty() ||  $lastTransaction->in_or_out == 'IN') {
             $transaction = new Transaction;
             $transaction->fill($request->all());
-            $transaction->user = 'Test';
+            $transaction->username = Auth::id();
             $transaction->in_or_out = 'OUT';
             $transaction->transaction_id = $this->generateTransactionId('OUT');
             $transaction->save();
@@ -76,8 +77,8 @@ class TransactionController extends Controller
             $transaction->transaction_id = $this->generateTransactionId($transaction->in_or_out);
             $transaction->due_date = NULL;
             $transaction->equipment_id = $id;
-            $transaction->user = "Test"; // temporary
-            $transaction->person_id = 1; // temporary
+            $transaction->username = Auth::id(); // temporary
+            $transaction->person_id = $lastTransaction->person_id; // temporary
             $transaction->save();
             return redirect()->route('inventory.index');
         }

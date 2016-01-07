@@ -18,10 +18,12 @@ class CreateTransactionsTable extends Migration
             $table->string('transaction_id')->unique();
             $table->date('due_date')->nullable();
             $table->integer('equipment_id')->unsigned();
-            $table->string('user');
+            $table->integer('username')->unsigned();
             $table->timestamps();
             $table->foreign('equipment_id')
                 ->references('id')->on('equipment');
+            $table->foreign('username')
+                ->references('id')->on('users');
         });
     }
 
