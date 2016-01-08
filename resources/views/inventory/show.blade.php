@@ -38,7 +38,7 @@
                             <div class="pull-right">
                                 {{ $note->user->name }} - <abbr
                                         title="{{ $note->created_at }}">{{ $note->created_at->diffForHumans() }}</abbr>
-                                {{ ($note->created_at == $note->updated_at) ? : " (Edited) "  }}
+                                {{ ($note->created_at == $note->updated_at) ? "" : " (Edited) "  }}
                                 @if($note->user_id == Auth::id())
                                     <div class="btn-group">
                                         <a href="#" data-toggle="dropdown"
