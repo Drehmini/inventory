@@ -70,6 +70,7 @@ class EquipmentController extends Controller
     {
         $item = Equipment::findorfail($id);
         $transactions = $item->transactions()->getOrdered();
-        return view('inventory.show', compact('item', 'transactions'));
+        $notes = $item->notes()->getOrdered();
+        return view('inventory.show', compact('item', 'transactions', 'notes'));
     }
 }

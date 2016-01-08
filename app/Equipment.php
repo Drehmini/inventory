@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Equipment extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'serial',
         'make',
@@ -17,7 +20,8 @@ class Equipment extends Model
     protected $dates = [
         'purchase_date',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'deleted_at',
     ];
 
     /**
@@ -26,5 +30,13 @@ class Equipment extends Model
     public function transactions()
     {
         return $this->hasMany('App\Transaction');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function notes()
+    {
+        return $this->hasMany('App\Note');
     }
 }

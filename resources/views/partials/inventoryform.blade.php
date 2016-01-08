@@ -5,7 +5,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">{{ $panelTitle }}</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body col-sm-offset-2">
                 <div class="form-group">
                     <!-- serial Form Input -->
                     {!! Form::label('serial', 'Serial Number:',  ['class' => 'control-label col-sm-4']) !!}
@@ -43,8 +43,8 @@
                     </div>
                 </div>
                 <div style="padding-top: 5%;">
-                    <!-- Add Person Form Input -->
-                    <div class="col-sm-offset-4">
+                    <!-- Add Item Form Input -->
+                    <div class="col-sm-offset-3">
                         {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-danger']) !!}
                     </div>

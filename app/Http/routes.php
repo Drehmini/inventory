@@ -35,6 +35,16 @@ Route::group(['middleware' => ['web', 'auth']], function () {
         ['as' => 'inventory.transactions.checkin', 'uses' => 'TransactionController@checkin']);
     Route::resource('inventory', 'EquipmentController');
     Route::resource('person', 'PersonController');
+    Route::post('inventory/note/store/{id}',
+        ['as' => 'inventory.note.store', 'uses' => 'NoteController@store']);
+    Route::get('inventory/note/create/{id}',
+        ['as' => 'inventory.note.create', 'uses' => 'NoteController@create']);
+    Route::delete('inventory/note/{id}',
+        ['as' => 'inventory.note.destroy', 'uses' => 'NoteController@destroy']);
+    Route::get('inventory/note/{id}/edit',
+        ['as' => 'inventory.note.edit', 'uses' => 'NoteController@edit']);
+    Route::patch('inventory/note/{id}',
+        ['as' => 'inventory.note.update', 'uses' => 'NoteController@update']);
 });
 
 Route::group(['middleware' => 'web'], function () {

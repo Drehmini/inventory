@@ -20,6 +20,7 @@ class CreateEquipmentTable extends Migration
             $table->string('model');
             $table->timestamp('purchase_date');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

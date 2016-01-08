@@ -5,5 +5,4 @@
                     'class' => 'form-horizontal']) !!}
     @include('partials.inventoryform', ['submitButtonText' => 'Update', 'panelTitle' => 'Update ' . $item->serial])
     {!! Form::close() !!}
-    @include('errors.list')
 @stop
