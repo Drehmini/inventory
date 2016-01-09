@@ -86,6 +86,10 @@ class TransactionController extends Controller
             return redirect()->route('inventory.index');
     }
 
+    /**
+     * @param $inOrOut
+     * @return string
+     */
     protected function generateTransactionId($inOrOut)
     {
         return 'ITCLL-' . $inOrOut . '-' . str_random();
