@@ -6,3 +6,4 @@ Homestead.json
 .idea
 config/adldap.php
 config/adldap_auth.php
+config/mail.php
