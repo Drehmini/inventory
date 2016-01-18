@@ -1,7 +1,10 @@
 @extends('app')
 @section('content')
+    @if(!$overdue->isEmpty())
+        @include('partials.overdue')
+    @endif
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 center-block">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Current Inventory</h3>

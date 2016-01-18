@@ -33,7 +33,7 @@ $(document).ready(function() {
     "info": false
   });
 
-  $('#overdue').dataTable( {
+  $('#overdue_equipment').dataTable( {
     "paging": false,
     "ordering": false,
     "info": false

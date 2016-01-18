@@ -15,6 +15,7 @@ class Transaction extends Model
     ];
 
     protected $dates = [
+        'due_date',
         'created_at',
         'updated_at',
     ];
@@ -27,12 +28,16 @@ class Transaction extends Model
         return $this->belongsTo('App\Equipment', 'equipment_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function person()
     {
         return $this->belongsTo('App\Person', 'person_id');
     }
 
     /**
+     * @param $query
      * @param $id
      * @return mixed
      */

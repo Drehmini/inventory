@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Carbon\Carbon;
 
 class TransactionRequest extends Request
 {
@@ -24,7 +25,7 @@ class TransactionRequest extends Request
     public function rules()
     {
         return [
-            'due_date'      => [ 'required', 'date' ],
+            'due_date'      => [ 'required', 'date', 'after:yesterday' ],
             'equipment_id'  => ['required'],
         ];
     }

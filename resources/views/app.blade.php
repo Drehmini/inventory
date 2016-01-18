@@ -61,7 +61,7 @@
             </div>
         </nav>
         <div class="container-fluid">
-            @include('errors.list');
+            @include('errors.list')
             @yield('content')
         </div>
     {{ Html::script('js/jquery-1.11.3.min.js') }}

@@ -32,6 +32,11 @@ class Equipment extends Model
         return $this->hasMany('App\Transaction');
     }
 
+    /*public function overdueTransactions()
+    {
+        return $this->hasOne('App\Transaction')->
+    }*/
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

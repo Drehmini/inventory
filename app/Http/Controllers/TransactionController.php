@@ -42,7 +42,7 @@ class TransactionController extends Controller
     public function store(TransactionRequest $request)
     {
         $lastTransaction = Transaction::findLatest($request->equipment_id);
-        if($lastTransaction->get()->isEmpty() ||  $lastTransaction->in_or_out == 'IN') {
+        if ($lastTransaction->get()->isEmpty() ||  $lastTransaction->in_or_out == 'IN') {
             $transaction = new Transaction;
             $transaction->fill($request->all());
             $transaction->username = Auth::id();
@@ -60,7 +60,8 @@ class TransactionController extends Controller
     public function checkout($id)
     {
         $item = Equipment::findorfail($id);
-        $people = Person::select(DB::raw("CONCAT(first_name,' ', last_name) AS full_name, id"))->lists('full_name', 'id');
+        $people = Person::select(DB::raw("CONCAT(first_name,' ', last_name) AS full_name, id"))
+                                            ->lists('full_name', 'id');
         return view('transaction.checkout', compact('item', 'people'));
     }
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Transaction;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -9,17 +12,26 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\EquipmentRequest;
 use App\Equipment;
-use Illuminate\Support\Facades\URL;
 
 class EquipmentController extends Controller
 {
     /**
      * @return View
+     * get the item where the first transaction's due date is not null and is less than today's date.
      */
     public function index()
     {
-        $equipment = Equipment::all();
-        return view('inventory.index', compact('equipment'));
+        $equipment = Equipment::with('transactions')->get();
+        $overdue = $equipment->filter(function($item) {
+            $lastTransaction = $item->transactions->last();
+            if(!is_null($lastTransaction) &&
+                !is_null($lastTransaction->due_date) &&
+                $lastTransaction->due_date->lt(Carbon::today())
+            ) {
+                return true;
+            }
+        });
+        return view('inventory.index', compact('equipment', 'overdue'));
     }
 
     /**
