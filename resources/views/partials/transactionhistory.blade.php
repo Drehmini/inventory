@@ -5,7 +5,7 @@
                 <h3 class="panel-title">Transaction History</h3>
             </div>
             <div class="panel-body table-responsive">
-                <table id="current_inventory" class="table table-striped table-hover">
+                <table id="transaction_history" class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <td>Transaction</td>

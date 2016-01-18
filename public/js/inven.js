@@ -38,5 +38,17 @@ $(document).ready(function() {
     "ordering": false,
     "info": false
   });
+
+  $('#transaction_history').dataTable( {
+    "paging": false,
+    "ordering": false,
+    "info": false
+  });
+
+  $("#people").dataTable( {
+    "paging": false,
+    "ordering": false,
+    "info": false
+  });
 // end datatable js
 });
