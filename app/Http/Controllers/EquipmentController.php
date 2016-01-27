@@ -17,7 +17,6 @@ class EquipmentController extends Controller
 {
     /**
      * @return View
-     * get the item where the first transaction's due date is not null and is less than today's date.
      */
     public function index()
     {
