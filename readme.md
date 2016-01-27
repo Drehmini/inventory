@@ -24,3 +24,6 @@ The scheduler must be setup using the cronjob
 ~~~
 * * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
 ~~~
+
+## License  
+This software is licensed under the [MIT license](http://opensource.org/licenses/MIT "MIT License"). 
