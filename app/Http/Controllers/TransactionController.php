@@ -125,7 +125,7 @@ class TransactionController extends Controller
      */
     protected function generateOverdueEmail(Transaction $transaction)
     {
-        $emailFrom = 'itcll@bluefieldstate.edu';
+        $emailFrom = 'itclendinglibrary@bluefieldstate.edu';
         $emailName = 'ITC Lending Library';
         $data = [
             'serial' => $transaction->equipment->serial,
@@ -145,7 +145,7 @@ class TransactionController extends Controller
      */
     protected function generateReceiptEmail(Transaction $transaction)
     {
-        $emailFrom = 'itcll@bluefieldstate.edu';
+        $emailFrom = 'itclendinglibrary@bluefieldstate.edu';
         $emailName = 'ITC Lending Library';
         $data = [
             'serial' => $transaction->equipment->serial,
