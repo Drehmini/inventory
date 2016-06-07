@@ -5,6 +5,7 @@
         {{ Html::style('css/bootstrap.min.css') }}
         {{ Html::style('css/dataTables.bootstrap.css') }}
         {{ Html::style('css/inven.css') }}
+        <title>ITC Lending Library</title>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
