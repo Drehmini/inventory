@@ -1,4 +1,4 @@
-@extends('App')
+@extends('app')
 
 @section('content')
     {{ session()->flash('view_from', $item->id) }}
